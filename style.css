@@ -69,3 +69,50 @@ body{
 .slide-link:hover span{
     transform: translateX(-100%);
 }
+
+/*Three*/
+
+.two-lines{
+    font-size: 50px;
+    text-decoration: none;
+    position: relative;
+    color: #222;
+}
+
+.two-lines::before,
+.two-lines::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    background: #222;
+    opacity: 0;
+    left: 50%;
+    transform: translate(-50%, 10px);
+    transition: all 0.2s ease-in-out;
+}
+
+.two-lines::before{
+    width: 90%;
+    bottom: 0;
+}
+
+.two-lines::after{
+    width: 60%;
+    bottom: -7px;
+}
+
+.two-lines:hover::before,
+.two-lines:hover::after{
+    opacity: 1;
+    transform: translate(-50%, 0px);
+}
+
+/*delai pour que une ligne viennen plutard*/
+.two-lines::before,
+.two-lines:hover::after{
+    transition-delay: 0.1s;
+}
+
+.two-lines:hover::before{
+    transition-delay: 0s;
+}
